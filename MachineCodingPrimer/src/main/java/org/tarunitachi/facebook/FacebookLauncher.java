@@ -70,8 +70,8 @@ class UserServiceImpl implements UserService{
         FBUser followee = userRepo.fetchbyId(followeeId);
         followee.getFollowers().add(followerId);
         follower.getFollowing().add(followeeId);
-        userRepo.upsert(followee);
-        userRepo.upsert(follower);
+//        userRepo.upsert(followee);
+//        userRepo.upsert(follower);
     }
 
     @Override
@@ -80,8 +80,8 @@ class UserServiceImpl implements UserService{
         FBUser followee = userRepo.fetchbyId(followeeId);
         followee.getFollowers().remove(followerId);
         follower.getFollowing().remove(followeeId);
-        userRepo.upsert(followee);
-        userRepo.upsert(follower);
+//        userRepo.upsert(followee);
+//        userRepo.upsert(follower);
     }
 
 }
